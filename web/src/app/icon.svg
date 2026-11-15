@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#141b2d"/>
+  <g transform="translate(50 50) scale(.9) translate(-50.5 -50)">
+    <rect x="22" y="20" width="56" height="60" rx="8" fill="none" stroke="#fbf8f1" stroke-width="4.5"/>
+    <path d="M9 36H22M9 50H22M9 64H22M78 43H91M78 57H91M36 20V12M50 20V12M64 20V12M36 80V88M50 80V88M64 80V88" stroke="#fbf8f1" stroke-width="3.8" stroke-linecap="round"/>
+    <path d="M32 36L50 31M32 36L50 44M32 36L50 56M32 36L50 69M32 50L50 31M32 50L50 44M32 50L50 56M32 50L50 69M32 64L50 31M32 64L50 44M32 64L50 56M32 64L50 69M50 31L68 43M50 31L68 57M50 44L68 43M50 44L68 57M50 56L68 43M50 56L68 57M50 69L68 43M50 69L68 57" stroke="#7fc8bc" stroke-width="1.1" opacity=".6"/>
+    <g fill="#fbf8f1" stroke="#141b2d" stroke-width="1.6">
+      <circle cx="32" cy="36" r="4"/><circle cx="32" cy="50" r="4"/><circle cx="32" cy="64" r="4"/>
+      <circle cx="50" cy="31" r="4"/><circle cx="50" cy="44" r="4"/><circle cx="50" cy="56" r="4"/><circle cx="50" cy="69" r="4"/>
+    </g>
+    <g fill="#e0312f" stroke="#141b2d" stroke-width="1.6">
+      <circle cx="68" cy="43" r="5.5"/><circle cx="68" cy="57" r="5.5"/>
+    </g>
+  </g>
+</svg>

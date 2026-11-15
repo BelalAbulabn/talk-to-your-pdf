@@ -1,0 +1,36 @@
+{
+  "name": "talk-to-your-pdf-server",
+  "version": "1.0.0",
+  "description": "API for Talk to your PDF: PDF chunking, hybrid search, voice calls over OpenAI Realtime and streamed text answers.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env api/server.ts",
+    "build": "tsc --noEmit && esbuild api/server.ts --bundle --platform=node --format=esm --target=node22 --packages=external --sourcemap --outfile=dist/server.js",
+    "start": "node --enable-source-maps dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --ignore-unknown --cache --check .",
+    "format:write": "prettier --ignore-unknown --write ."
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.7",
+    "hono": "^4.13.18",
+    "unpdf": "^2.1.0",
+    "ws": "^8.22.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/ws": "^8.18.2",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.1.0"
+  },
+  "license": "MIT",
+  "author": "Belal Abulabn"
+}

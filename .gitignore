@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+dist/
+out/
+*.tsbuildinfo
+next-env.d.ts
+coverage/
+
+# secrets (copy .env.example to .env)
+.env
+.env.*
+!.env.example
+
+# runtime data: uploaded document index and usage counters
+server/storage/
+
+# logs and OS files
+*.log
+.DS_Store
+Thumbs.db
