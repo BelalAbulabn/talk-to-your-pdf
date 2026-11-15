@@ -47,7 +47,25 @@ events (`search`, `source`, `token`, `done`). The full API is in [docs/api.md](d
 
 ## Run it locally
 
-You need Node.js 22 or newer and an OpenAI API key with access to the Realtime API.
+You need Node.js 22 or newer and your own OpenAI API key.
+
+### 1. Get an OpenAI API key
+
+The app uses OpenAI for the voice conversation, the text answers and the search. No key is
+included in this repository, so you bring your own:
+
+1. Sign in at [platform.openai.com](https://platform.openai.com) and add a payment method under
+   **Billing**. The API is paid per use and is separate from a ChatGPT subscription.
+2. Create a key on the [API keys](https://platform.openai.com/api-keys) page.
+3. Put it into `server/.env` (step 2 below): `OPENAI_API_KEY=sk-...`
+
+The key stays on your server. The browser never sees it, and `.env` is listed in `.gitignore`,
+so git does not commit it. Never put a real key into `.env.example` or into the web app.
+
+To keep costs under control, the server stops for the day once `DAILY_BUDGET_USD` is reached
+(default 10 USD). You can also set a budget limit in the OpenAI dashboard.
+
+### 2. Start the app
 
 ```bash
 git clone https://github.com/BelalAbulabn/talk-to-your-pdf.git
@@ -55,11 +73,11 @@ cd talk-to-your-pdf
 
 # API on http://localhost:4000
 cd server
-cp .env.example .env   # set OPENAI_API_KEY
+cp .env.example .env   # paste your key: OPENAI_API_KEY=sk-...
 npm install
 npm run dev
 
-# app on http://localhost:3000 (second terminal)
+# app on http://localhost:3000 (second terminal, inside talk-to-your-pdf)
 cd web
 cp .env.example .env.local
 npm install
@@ -72,7 +90,7 @@ the microphone once.
 ### With Docker
 
 ```bash
-cp server/.env.example server/.env   # set OPENAI_API_KEY
+cp server/.env.example server/.env   # paste your key: OPENAI_API_KEY=sk-...
 docker compose up -d --build
 ```
 
